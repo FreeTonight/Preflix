@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Nav.css";
 
-function Nav() {
+const Nav = () => {
   const [show, handleShow] = useState(false);
 
   useEffect(() => {
@@ -14,6 +14,7 @@ function Nav() {
       window.removeEventListener("scroll");
     };
   }, []);
+  
   return (
     <div className={`navbar ${show && "nav-black"}`}>
       <img

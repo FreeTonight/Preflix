@@ -10,22 +10,17 @@ function App() {
     <div className="App">
       <Nav />
       <Banner />
-      <Row
-        title="Netflix Originals"
-        fetchUrl={requests.fetchNetflixOriginals}
-        isLargeRow
-      />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-      <Row title="Drama" fetchUrl={requests.fetchDrama} />
-      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
-      <Row title="Animation" fetchUrl={requests.fetchAnimation} />
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      <Row title="TV Show" fetchUrl={requests.fetchTVShow} />
-      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-      <Row title="Science Fiction" fetchUrl={requests.fetchScienceFiction} />
+      <Row title="Trending Now" id="Trending Now" fetchUrl={requests.fetchTrending} isLargeRow/>
+      <Row title="Top Rated" id="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row title="Drama" id="Drama" fetchUrl={requests.fetchDrama} />
+      <Row title="Horror Movies" id="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="Animation" id="Animation" fetchUrl={requests.fetchAnimation} />
+      <Row title="Action Movies" id="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="TV Show" id="TV Show" fetchUrl={requests.fetchTVShow} />
+      <Row title="Comedy Movies" id="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+      <Row title="Romance Movies" id="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row title="Documentaries" id="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Row title="Science Fiction" id="Science Fiction" fetchUrl={requests.fetchScienceFiction} />
     </div>
   );
 }
