@@ -70,14 +70,14 @@ const Row = ({ title, fetchUrl, isLargeRow, id }) => {
         </div> 
        </div>
 
-      {showModal && (
+      {showModal && 
         <Modal
           show={showModal}
           onClose={() => setShowModal(false)}
           {...movieSelected}
           // id={movie.id}
         />
-      )}
+      }
     </div>
   );
 };
