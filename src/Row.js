@@ -4,6 +4,7 @@ import "./Row.css";
 import Modal from "./Modal";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+// import { Button } from "./Button";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -38,7 +39,7 @@ const Row = ({ title, fetchUrl, isLargeRow, id }) => {
           <span
             className="arrow"
             onClick={() => {
-              document.getElementById(id).scrollLeft -= (window.innerWidth - 250)
+              document.getElementById(id).scrollLeft -= window.innerWidth - 250;
             }}
           >
             <ArrowBackIosIcon />
@@ -47,37 +48,40 @@ const Row = ({ title, fetchUrl, isLargeRow, id }) => {
 
         <div id={id} className="row-posters">
           {movies.map((movie) => (
-            <img
-              key={movie.id}
-              onClick={() => handleClick(movie)}
-              className={`row-poster ${isLargeRow && "row-posterLarge"}`}
-              src={`${base_url}${
-                isLargeRow ? movie.poster_path : movie.backdrop_path
-              }`}
-              alt={movie.name}
-            />
+              <img
+                key={movie.id}
+                onClick={() => handleClick(movie)}
+                className={`row-poster ${isLargeRow && "row-posterLarge"}`}
+                src={`${base_url}${
+                  isLargeRow ? movie.poster_path : movie.backdrop_path
+                }`}
+                alt={movie.name}
+              />
           ))}
+              {/* <div className="poster-layer">
+                <Button buttonSize="btn--small">Play</Button>
+              </div> */}
         </div>
         <div className="slider-arrow-right">
           <span
             className="arrow"
             onClick={() => {
-              document.getElementById(id).scrollLeft += (window.innerWidth - 250)
+              document.getElementById(id).scrollLeft += window.innerWidth - 250;
             }}
           >
             <ArrowForwardIosIcon />
           </span>
-        </div> 
-       </div>
+        </div>
+      </div>
 
-      {showModal && 
+      {showModal && (
         <Modal
           show={showModal}
           onClose={() => setShowModal(false)}
           {...movieSelected}
           // id={movie.id}
         />
-      }
+      )}
     </div>
   );
 };
